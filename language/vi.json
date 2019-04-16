@@ -1,10 +1,10 @@
-{
+﻿{
   "semantics": [
     {
       "label": "Đa phương tiện",
       "fields": [
         {
-          "label": "Loại",
+          "label": "Đa phương tiện",
           "description": "Đa phương tiện tùy chọn để hiển thị phía trên câu hỏi."
         },
         {
@@ -33,7 +33,7 @@
             "description": "Câu nói ở tốc độ bình thường"
           },
           {
-            "label": "Mẫu âm thanh (chậm)",
+            "label": "Mẫu âm thanh chậm",
             "description": "Câu nói ở tốc độ chậm"
           },
           {
@@ -52,7 +52,7 @@
               "label": "Mặc định"
             }
           ],
-          "label": "Xác định phản hồi tùy chỉnh cho bất kỳ thang điểm nào",
+          "label": "Xác định phản hồi tùy chỉnh cho bất kỳ phạm vi điểm nào",
           "description": "Nhấp vào nút \"Thêm phạm vi\" để thêm bao nhiêu phạm vi bạn cần. Ví dụ: 0-20% Điểm kém, 21-91% Điểm trung bình, 91-100% Điểm tuyệt vời!",
           "entity": "range",
           "field": {
@@ -88,18 +88,53 @@
         },
         {
           "label": "Hiển thị lỗi chính tả",
-          "description": "Nếu được chọn, lỗi chính tả sẽ được hiển thị theo kiểu tùy chỉnh để phân biệt chúng với các lỗi rõ ràng.",
+          "description": "Nếu được chọn, lỗi chính tả sẽ được hiển thị theo kiểu tùy chỉnh để phân biệt chúng với các lỗi rõ ràng."
+        },
+        {
+          "label": "Giá trị của lỗi chính tả",
+          "description": "Xác định mức độ lỗi đánh máy (từ có 3-9 ký tự: tối đa 1 lỗi, từ có hơn 9 ký tự: tối đa 2 lỗi) được tính là một lỗi thực sự.",
           "options": [
             {
-              "label": "100 %"
+              "label": "100%"
             },
             {
-              "label": "50 %"
+              "label": "50%"
             },
             {
-              "label": "0 %"
+              "label": "0%"
             }
           ]
+        },
+        {
+          "label": "Trình bày các giải pháp thay thế",
+          "description": "Xác định những từ thay thế nào sẽ được trình bày cho các từ sai hoặc thiếu trong giải pháp.",
+          "options": [
+            {
+              "label": "Chỉ hiển thị thay thế đầu tiên"
+            },
+            {
+              "label": "Hiển thị tất cả các lựa chọn thay thế"
+            }
+          ]
+        },
+        {
+          "label": "Hướng dẫn viết",
+          "description": "Đặt liệu ngôn ngữ của câu là từ phải sang trái hay từ trái sang phải.",
+          "options": [
+            {
+              "label": "Phát hiện tự động"
+            },
+            {
+              "label": "Từ phải sang trái"
+            },
+            {
+              "label": "Trái sang phải"
+            }
+          ]
+        },
+        {
+          "label": "Tách các ký tự",
+          "description": "Kích hoạt nếu các ký tự cụ thể (ví dụ: ký tự Hán Trung) nên được tách thành các từ riêng biệt."
         },
         {
           "label": "Kích hoạt \"Thử lại\""
@@ -114,7 +149,7 @@
       "fields": [
         {
           "label": "Phản hồi chung",
-          "description": "Bạn có thể sử dụng một vài placeholders mà sẽ được thay thế với số nguyên: @matches = sô lượng khớp, @total = tổng số lỗi, @capped = tổng số lỗi tối đa, @wrong = từ sai, @added = từ thêm, @missing = từ thiếu, @typo = lỗi đánh máy",
+          "description": "Bạn có thể sử dụng một vài placeholders mà sẽ được thay thế với số nguyên: @matches = số khớp, @total = tổng số lỗi, @capped = tổng số lỗi tối đa, @wrong = từ sai, @added = từ thêm vào, @missing = từ thiếu, @typo = lỗi đánh máy",
           "default": "Bạn đã mắc lỗi @total."
         },
         {
@@ -156,7 +191,7 @@
           "default": "vô hạn"
         },
         {
-          "label": "Trường nhập văn bản",
+          "label": "Nhập trường văn bản",
           "default": "Nhập những gì bạn đã nghe."
         },
         {
@@ -173,8 +208,8 @@
           "default": "Câu"
         },
         {
-          "label": "Cụm từ",
-          "default": "Cụm từ"
+          "label": "Mục",
+          "default": "Mục"
         },
         {
           "label": "Đúng",
@@ -186,7 +221,7 @@
         },
         {
           "label": "Lỗi nhỏ",
-          "default": "Lỗi nhỏ"
+          "default": "lỗi nhỏ"
         },
         {
           "label": "Thiếu từ hoặc ký hiệu",
@@ -197,64 +232,68 @@
           "default": "đã thêm"
         },
         {
-          "label": "Trả lời đúng",
-          "default": "Đúng"
+          "label": "Giải pháp đúng",
+          "default": "Đáng lẽ phải"
+        },
+        {
+          "label": "Hoặc",
+          "default": "hoặc"
         },
         {
           "label": "Điểm",
-          "default": "Điểm"
+          "default": "điểm"
         },
         {
           "label": "Điểm",
-          "default": "Điểm"
+          "default": "điểm"
         },
         {
-          "label": "Chấm (dấu chấm câu)",
-          "default": "Chấm"
+          "label": "Thời gian",
+          "default": "thời gian"
         },
         {
           "label": "Dấu chấm than",
-          "default": "Dấu chấm than"
+          "default": "dấu chấm than"
         },
         {
           "label": "Dấu hỏi",
-          "default": "Dấu hỏi"
+          "default": "dấu hỏi"
         },
         {
           "label": "Dấu phẩy",
-          "default": "Dấu phẩy"
+          "default": "dấu phẩy"
         },
         {
           "label": "Trích dẫn đơn",
-          "default": "Trích dẫn đơn"
+          "default": "trích dẫn đơn"
         },
         {
           "label": "Trích dẫn kép",
-          "default": "Trích dẫn kép"
+          "default": "trích dẫn kép"
         },
         {
           "label": "Dấu hai chấm",
-          "default": "Dấu hai chấm"
+          "default": "dấu hai chấm"
         },
         {
           "label": "Dấu chấm phẩy",
-          "default": "Dấu chấm phẩy"
+          "default": "dấu chấm phẩy"
         },
         {
           "label": "Cộng",
-          "default": "Cộng"
+          "default": "cộng"
         },
         {
           "label": "Trừ",
-          "default": "Trừ"
+          "default": "trừ"
         },
         {
           "label": "Dấu hoa thị",
-          "default": "Dấu hoa thị"
+          "default": "dấu hoa thị"
         },
         {
-          "label": "Dấu gạch chéo",
-          "default": "Gạch chéo"
+          "label": "Chuyển tiếp gạch chéo",
+          "default": "dấu gạch chéo"
         }
       ]
     }
